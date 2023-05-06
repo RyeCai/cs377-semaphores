@@ -1,1 +1,1 @@
-# cs377-semaphores
+# Producer/Consumer with Semaphores
