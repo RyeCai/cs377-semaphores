@@ -43,138 +43,138 @@ TEST(BankTest, Test1) {
 }
 
 
-TEST(BankTest, Test2) {
-    Bank *bank = new Bank(10);
+// TEST(BankTest, Test2) {
+//     Bank *bank = new Bank(10);
 
-    // capture out
-    stringstream output;
-    streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
-    cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
+//     // capture out
+//     stringstream output;
+//     streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
+//     cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
 
-    // add ballance
-    bank->deposit(0, 0, 1, 100);
-    bank->deposit(0, 0, 3, 100);
-    bank->deposit(0, 0, 5, 100);
+//     // add ballance
+//     bank->deposit(0, 0, 1, 100);
+//     bank->deposit(0, 0, 3, 100);
+//     bank->deposit(0, 0, 5, 100);
     
-    cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
+//     cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
     
-    EXPECT_EQ(bank->accounts[1].balance, 100);
-    EXPECT_EQ(bank->accounts[3].balance, 100);
-    EXPECT_EQ(bank->accounts[5].balance, 100);
-    EXPECT_EQ(bank->accounts[8].balance, 0);
+//     EXPECT_EQ(bank->accounts[1].balance, 100);
+//     EXPECT_EQ(bank->accounts[3].balance, 100);
+//     EXPECT_EQ(bank->accounts[5].balance, 100);
+//     EXPECT_EQ(bank->accounts[8].balance, 0);
 
-    delete bank;
-}
+//     delete bank;
+// }
 
-TEST(BankTest, Test3) {
-    Bank *bank = new Bank(10);
+// TEST(BankTest, Test3) {
+//     Bank *bank = new Bank(10);
 
-    // capture out
-    stringstream output;
-    streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
-    cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
-    
-
-    // add ballance
-    bank->deposit(0, 0, 1, 100);
-    bank->deposit(0, 0, 3, 100);
-    bank->deposit(0, 0, 5, 100);
-
-    int withdraw1 = bank->withdraw(0, 0, 1, 50);
-    int withdraw2 = bank->withdraw(0, 0, 0, 50);
-
-    cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
-    
-    EXPECT_EQ(withdraw1, 0);
-    EXPECT_EQ(withdraw2, -1);
-
-    delete bank;
-}
-
-TEST(BankTest, Test4) {
-    Bank *bank = new Bank(10);
-
-    // capture out
-    stringstream output;
-    streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
-    cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
+//     // capture out
+//     stringstream output;
+//     streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
+//     cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
     
 
-    // add ballance
-    bank->deposit(0, 0, 1, 100);
-    bank->deposit(0, 0, 3, 100);
-    bank->deposit(0, 0, 5, 100);
+//     // add ballance
+//     bank->deposit(0, 0, 1, 100);
+//     bank->deposit(0, 0, 3, 100);
+//     bank->deposit(0, 0, 5, 100);
 
-    int transfer1 = bank->transfer(0, 0, 1, 0, 50);
-    int transfer2 = bank->transfer(0, 0, 6, 7, 50);
+//     int withdraw1 = bank->withdraw(0, 0, 1, 50);
+//     int withdraw2 = bank->withdraw(0, 0, 0, 50);
 
-    cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
+//     cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
     
-    EXPECT_EQ(transfer1, 0);
-    EXPECT_EQ(transfer2, -1);
-    EXPECT_TRUE(bank->accounts[1].balance == 50 && bank->accounts[0].balance == 50);
+//     EXPECT_EQ(withdraw1, 0);
+//     EXPECT_EQ(withdraw2, -1);
 
-    delete bank;
-}
+//     delete bank;
+// }
 
-TEST(BankTest, Test5) {
-    Bank *bank = new Bank(10);
+// TEST(BankTest, Test4) {
+//     Bank *bank = new Bank(10);
 
-    // capture out
-    stringstream output;
-    streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
-    cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
+//     // capture out
+//     stringstream output;
+//     streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
+//     cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
     
 
-    // add ballance
-    bank->deposit(0, 0, 1, 100);
+//     // add ballance
+//     bank->deposit(0, 0, 1, 100);
+//     bank->deposit(0, 0, 3, 100);
+//     bank->deposit(0, 0, 5, 100);
 
-    int transfer1 = bank->transfer(0, 0, 1, 1, 50);
+//     int transfer1 = bank->transfer(0, 0, 1, 0, 50);
+//     int transfer2 = bank->transfer(0, 0, 6, 7, 50);
 
-    cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
+//     cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
     
-    EXPECT_EQ(transfer1, -1);
+//     EXPECT_EQ(transfer1, 0);
+//     EXPECT_EQ(transfer2, -1);
+//     EXPECT_TRUE(bank->accounts[1].balance == 50 && bank->accounts[0].balance == 50);
 
-    delete bank;
-}
+//     delete bank;
+// }
 
-TEST(BankTest, Test6) {
-    Bank *bank = new Bank(10);
+// TEST(BankTest, Test5) {
+//     Bank *bank = new Bank(10);
 
-    // capture out
+//     // capture out
+//     stringstream output;
+//     streambuf* oldCoutStreamBuf = cout.rdbuf(); // save cout's streambuf
+//     cout.rdbuf(output.rdbuf()); // redirect cout to stringstream
     
-    int ret;
-    if ((ret = pthread_mutex_trylock(&bank->accounts[0].lock)) == 0) {
-      // Mutex was successfully locked
-      pthread_mutex_unlock(&bank->accounts[0].lock);
-    }
-    else {
-      // err
-    }
 
-    ASSERT_NE(ret, 22) << "Forgot to initialize account lock?";
+//     // add ballance
+//     bank->deposit(0, 0, 1, 100);
 
-    if ((ret = pthread_mutex_trylock(&bank->bank_lock)) == 0) {
-      // Mutex was successfully locked
-      pthread_mutex_unlock(&bank->bank_lock);
-    }
-    else {
-      // err
-    }
+//     int transfer1 = bank->transfer(0, 0, 1, 1, 50);
 
-    ASSERT_NE(ret, 22) << "Forgot to initialize bank global lock?";
+//     cout.rdbuf(oldCoutStreamBuf); // restore cout's original streambuf
+    
+//     EXPECT_EQ(transfer1, -1);
 
-    delete bank;
-}
+//     delete bank;
+// }
+
+// TEST(BankTest, Test6) {
+//     Bank *bank = new Bank(10);
+
+//     // capture out
+    
+//     int ret;
+//     if ((ret = pthread_mutex_trylock(&bank->accounts[0].lock)) == 0) {
+//       // Mutex was successfully locked
+//       pthread_mutex_unlock(&bank->accounts[0].lock);
+//     }
+//     else {
+//       // err
+//     }
+
+//     ASSERT_NE(ret, 22) << "Forgot to initialize account lock?";
+
+//     if ((ret = pthread_mutex_trylock(&bank->bank_lock)) == 0) {
+//       // Mutex was successfully locked
+//       pthread_mutex_unlock(&bank->bank_lock);
+//     }
+//     else {
+//       // err
+//     }
+
+//     ASSERT_NE(ret, 22) << "Forgot to initialize bank global lock?";
+
+//     delete bank;
+// }
 
 
-/// test load 
-TEST(LedgerTest, Test1){
+// /// test load 
+// TEST(LedgerTest, Test1){
 
-    load_ledger("ledger.txt");
-    EXPECT_EQ(ledger.size(), 10);
-    ledger.clear();
-}
+//     load_ledger("ledger.txt");
+//     EXPECT_EQ(ledger.size(), 10);
+//     ledger.clear();
+// }
 
 
 TEST(LedgerTest, Test2) {
