@@ -1,5 +1,11 @@
 # Producer/Consumer with Semaphores
 
+Video Link: https://drive.google.com/file/d/1-SCHYJ1HbdPqinuRxyd48VSKd9K7AExx/view?usp=sharing
+
+Presentation Link: https://docs.google.com/presentation/d/1X2yaYPMaDpI3ggbROT0SNFUwm1HzOkEd8x2o7_j7imM/edit?usp=sharing
+
+Presentation Link:
+
 ## Overview
 
 This project is an extension of the Pr4: Producer/Consumer with a twist: the code only uses semaphores. This means that all mutex locks have been converted to binary semaphores. Additionally, the application tackles the Producer/Consumer problem proposed by Dijkstra and an implementation of read/write locks.
